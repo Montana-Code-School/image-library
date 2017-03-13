@@ -46,8 +46,12 @@ export default class ImageStore {
         description: img.description,
         owner: userid
       })
-    }).then(result => result.json()).then(res => {img._id = res._id;})
-      .then(this.library.push(img));
+    })
+    .then(result => result.json())
+    .then(res => {
+      img._id = res._id;
+      this.library.push(img)
+    });
   }
 
   newGiphySearch(keyword, limit, offset){
