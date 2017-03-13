@@ -31,9 +31,9 @@ export default class ImageStore {
     }));
   }
 
-  saveToLibrary(incomingimage, userid){
+  saveToLibrary(incomingimage, user){
     let img = incomingimage;
-    img.owner = userid;
+    img.owner = user;
     fetch(`/gifs`, {
       method: 'POST',
       headers: {
@@ -44,7 +44,7 @@ export default class ImageStore {
         name: img.name,
         url: img.url,
         description: img.description,
-        owner: userid
+        owner: user._id
       })
     })
     .then(result => result.json())

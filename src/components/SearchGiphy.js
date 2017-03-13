@@ -25,7 +25,8 @@ class SearchGiphy extends React.Component{
     if(useableoffset != 0){
       useableoffset = math.randomInt(100);
     }
-    this.props.imageStore.newGiphySearch(this.state.keyword, this.state.limit, useableoffset);
+    this.props.imageStore.newGiphySearch(
+      this.state.keyword, this.state.limit, useableoffset);
   }
 
   convertToShowGifs(keyword, foundImages){

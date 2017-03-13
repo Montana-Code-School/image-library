@@ -10,22 +10,23 @@ class SearchResults extends React.Component {
      this.prepareImages = this.prepareImages.bind(this);
    }
 
-   prepareImages() {
-   return this.props.imageStore.searchresults.map(function(img) {
-       return(<ImageComponent
+  prepareImages() {
+    return this.props.imageStore.searchresults.map(function(img) {
+      return(<ImageComponent
               key={img.name}
               imageinfo={img}
               typeofdisplay="searchresults"/>);
-     }, this);
-   }
-   render() {
+    }, this);
+  }
 
-     return (
-       <div className="col-md-12">
+  render() {
+
+    return (
+      <div className="col-md-12">
         {this.prepareImages()}
-       </div>
-     );
-   }
+      </div>
+    );
+  }
 }
 
 SearchResults.propTypes = {
